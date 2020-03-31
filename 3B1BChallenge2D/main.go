@@ -18,7 +18,7 @@ func main() {
 		// p = (x, y)
 		var p1_x, p1_y float64
 
-		// p_x random between -1 and 1
+		// random  -1 < p_x < 1 TODO: How include -1 and 1?
 		p1_x = rand.Float64() * math.Pow(-1.0, float64(rand.Intn(2)))
 		// p_x^2 + p_y^2 = R^2
 		p1_y = math.Pow(-1.0, float64(rand.Intn(2))) * math.Sqrt(1- math.Pow(p1_x, 2.0))
@@ -66,8 +66,10 @@ func main() {
 		}
 		counter ++
 
-		fmt.Println(inside/counter)
-		// 0.25
+		fmt.Println(inside/counter, "\t", counter)
+		// ~ 0.25
+		// fmt.Println(inside/counter + outside/counter)
+		// 1
 	}
 }
 // TODO: Look for a draw package and plot every triangle inside of the circle.
