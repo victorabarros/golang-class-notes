@@ -65,3 +65,4 @@ func main() {
 		// 0.25
 	}
 }
+// TODO: Look for a draw package and plot every triangle inside of the circle.
