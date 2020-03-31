@@ -14,7 +14,7 @@ var counter = 0
 var now = time.Now().UTC()
 
 func main() {
-	for i:=0;i<10;i++{
+	for i:= 0; i < 10; i++{
 		wg.Add(2)
 		go sayHello(i)
 		go increment()
