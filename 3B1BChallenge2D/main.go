@@ -10,7 +10,7 @@ import (
 )
 
 var counter = 0.0
-var inside = 0.0
+var inside  = 0.0
 var outside = 0.0
 
 func main() {
@@ -22,6 +22,9 @@ func main() {
 		p1_x = rand.Float64() * math.Pow(-1.0, float64(rand.Intn(2)))
 		// p_x^2 + p_y^2 = R^2
 		p1_y = math.Pow(-1.0, float64(rand.Intn(2))) * math.Sqrt(1- math.Pow(p1_x, 2.0))
+
+		// fmt.Println(math.Pow(p1_x, 2.0) + math.Pow(p1_y, 2.0))
+		// ~ 1
 
 		// Same...
 		var p2_x, p2_y float64
@@ -55,8 +58,10 @@ func main() {
 		// It's mean that angule is biggest then 90º and we have a obtusangle
 		// And it's doesn't contains the circle
 		if cos_theta1 < 0 || cos_theta2 < 0 || cos_theta3 < 0 {
+			// obtusangle
 			outside ++
 		} else {
+			// acutangle
 			inside ++
 		}
 		counter ++
@@ -66,3 +71,7 @@ func main() {
 	}
 }
 // TODO: Look for a draw package and plot every triangle inside of the circle.
+// TODO: I think a better approach is with analytc geometryc instead of plane geometry.
+// Must exist a theoreme to return in one form the angles of a triangle on the plane.
+// Example: it's a knowledge that tan(alpha) = Dy/Dx => alpha = tan^-1(Dy/Dx)
+// TODO: Made the challenge in 3D
