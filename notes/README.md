@@ -25,3 +25,8 @@ TODO:
 # https://www.youtube.com/watch?v=3gQa1LWwuzk
 # https://www.youtube.com/watch?v=ltqV6pDKZD8
 # https://www.youtube.com/watch?v=PTE4VJIdHPg
+
+benchmark in go:
+Alternative opensource to work communication media (slack): https://github.com/mattermost/mattermost-server
+Alternative opensource to code repository (github): https://github.com/gogs/gogs
+
