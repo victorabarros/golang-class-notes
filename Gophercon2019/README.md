@@ -6,7 +6,7 @@ https://www.infoq.com/br/presentations/otimizacao-performance-em-go/
 
  - Measure twice, cut once.
  - Premature optimization is the root of all evil - Donald Knuth
-[](./rootOfAllEvil.jpg)
+![](./rootOfAllEvil.jpg)
  - Latency at a human scale: [Font]( https://www.prowesscorp.com/computer-latency-at-a-human-scale/)
 
 |System Event|Actual Latency|Scaled Latency|
