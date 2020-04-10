@@ -279,3 +279,4 @@ $RECYCLE.BIN/
 *.pem
 package*.json
 .banking_integration/secrets.py
+hurb/*
