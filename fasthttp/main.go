@@ -31,7 +31,7 @@ func main() {
 
     req.SetRequestURI(endpoint)
 	// ctx := fasthttp.RequestCtx{Request: req}
-	client := &fasthttp.Client{}
+	client := fasthttp.Client{}
 
 	fmt.Println(string(req.RequestURI()))
 	client.Do(req, resp)
