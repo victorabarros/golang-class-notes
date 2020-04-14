@@ -31,9 +31,9 @@ func walkTree(t *tree.Tree, ch chan int) {
 // func Same(t1, t2 *tree.Tree) bool
 
 func printChan(ch chan int) {
-	for i := range ch {
-		fmt.Println(i)
-	}
+    for i := range ch {
+        fmt.Println(i)
+    }
 }
 
 func main() {

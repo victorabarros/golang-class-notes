@@ -2,8 +2,8 @@
 package main
 
 import (
-	"fmt"
-	"log"
+    "fmt"
+    "log"
 )
 
 func main() {
@@ -33,6 +33,6 @@ func more(){
 
     c := a
     log.Println(c, &c)
-	log.Println(&c == &a)
-	// TODO: how edit lof prefix? show only seconds with decimals
+    log.Println(&c == &a)
+    // TODO: how edit lof prefix? show only seconds with decimals
 }

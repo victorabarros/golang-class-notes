@@ -20,20 +20,20 @@ func main() {
 
     // headers := fasthttp.RequestHeader{}
     // headers.Add("Ota-Cache-Refresh", "0")
-	req := fasthttp.AcquireRequest()
-	req.Header.Add("Ota-Cache-Refresh", "0")
-	resp := fasthttp.AcquireResponse()
+    req := fasthttp.AcquireRequest()
+    req.Header.Add("Ota-Cache-Refresh", "0")
+    resp := fasthttp.AcquireResponse()
 
-	endpoint := fmt.Sprintf("%shotels/%s-%s",
+    endpoint := fmt.Sprintf("%shotels/%s-%s",
                             "http://www.ota-api.hud/",
                             "OMN",
                             "2020")
 
     req.SetRequestURI(endpoint)
-	// ctx := fasthttp.RequestCtx{Request: req}
-	client := fasthttp.Client{}
+    // ctx := fasthttp.RequestCtx{Request: req}
+    client := fasthttp.Client{}
 
-	fmt.Println(string(req.RequestURI()))
-	client.Do(req, resp)
-	fmt.Println(string(resp.Body()))
+    fmt.Println(string(req.RequestURI()))
+    client.Do(req, resp)
+    fmt.Println(string(resp.Body()))
 }
