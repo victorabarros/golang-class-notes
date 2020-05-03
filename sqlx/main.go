@@ -9,7 +9,7 @@ import (
 
 const (
     databaseDriver = "mysql"
-    databaseDSN    = "user:password@protocol(ip:port)/schema"
+    databaseDSN    = "root:QHXveCUdpcppy-2j@tcp(35.202.102.251:3306)/ota"
 )
 
 type Sku struct {
