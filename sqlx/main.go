@@ -1,6 +1,7 @@
 package main
 
 import (
+    "fmt"
     _ "github.com/go-sql-driver/mysql"
     "context"
     "github.com/jmoiron/sqlx"
@@ -9,7 +10,6 @@ import (
 
 const (
     databaseDriver = "mysql"
-    databaseDSN    = "root:QHXveCUdpcppy-2j@tcp(35.202.102.251:3306)/ota"
 )
 
 type Sku struct {
@@ -20,6 +20,11 @@ type Sku struct {
 func main() {
     ctx, cancel := context.WithCancel(context.Background())
     defer cancel()
+
+	databaseDSN := fmt.Sprintf("%s:%s@tcp(%s)/ota",
+		"hotelurb_dba",
+		"QHXveCUdpcppy-2j",
+		"database_ota.hud:3306")
 
     db, err := sqlx.ConnectContext(ctx, databaseDriver, databaseDSN)
     if err != nil {
