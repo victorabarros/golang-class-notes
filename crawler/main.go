@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+
 // import requests
 // RESTAURANTS = [...]
 // URL = "https://www.google.com/search"
@@ -12,10 +13,9 @@ import "fmt"
 //     if LOCAL in response.text.lower():
 //         print("\t", restaurant)
 
-
 // Equivalente ao script acima, mas usando concurrency.
 // Quanto tempo levaria?
 
 func main() {
-    fmt.Println("Crawler")
+	fmt.Println("Crawler")
 }

@@ -1,14 +1,14 @@
 package main
 
 import (
-    "fmt"
-    _ "github.com/go-sql-driver/mysql"
-    "github.com/jmoiron/sqlx"
+	"fmt"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/jmoiron/sqlx"
 )
 
 func main() {
-    fmt.Println(IsDBUp("OTA-DB", "mysql", "hotelurb_dba:QHXveCUdpcppy-2j@tcp(database_ota.hud:3306)/ota"))
-    fmt.Println(IsDBUp("NHU-DB", "mysql", "hotelurb_dba:QHXveCUdpcppy-2j@tcp(database_nhu.hud:3306)/novo_hu"))
+	fmt.Println(IsDBUp("OTA-DB", "mysql", "hotelurb_dba:QHXveCUdpcppy-2j@tcp(database_ota.hud:3306)/ota"))
+	fmt.Println(IsDBUp("NHU-DB", "mysql", "hotelurb_dba:QHXveCUdpcppy-2j@tcp(database_nhu.hud:3306)/novo_hu"))
 }
 
 // IsDBUp ping dependency.
