@@ -12,7 +12,8 @@ import (
 // Complete the countTripletsV2 function below.
 func countTripletsV2(arr []int64, r int64) int64 {
     // GP: {a0, a1, a2, ...} Where a1 = a0 * r and a2 = a1 * r = a0 * r ^2
-
+    // Read: https://github.com/JaredLGillespie/HackerRank/blob/master/Python/count-triplets-1.py
+    // Read: https://allhackerranksolutions.blogspot.com/2019/02/count-triplets-hacker-rank-solution.html
     // O(n)
     amap := make(map[int64]int64)
     for _, a0 := range arr {
