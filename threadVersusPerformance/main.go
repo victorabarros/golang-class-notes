@@ -42,9 +42,6 @@ func incrementUntilTarget() {
 // Result incrementUntilTarget with maxInt = 1<<32 - 1
 // nThreads = 1: dt = [5.767828906, 5.747121803, 5.80211074, 5.789619506, 5.775224127, 5.779455311, 5.798811127]
 // nThreads = 2: dt = [9.127142756, 11.09388874, 11.616361915, 9.539769533, 9.476375706]
-// nThreads = 4: dt = []
-// nThreads = 8: dt = []
-// nThreads = 16: dt = []
 // nThreads = 32: dt = [20.237369295]
 
 func incrementUntilTargetAndSleep() {
