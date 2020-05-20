@@ -280,3 +280,4 @@ $RECYCLE.BIN/
 package*.json
 .banking_integration/secrets.py
 hurb/*
+c.out

@@ -29,7 +29,8 @@ func main() {
 	for value < maxInt {
 		// wait
 	}
-	fmt.Println("dt: ", time.Since(start))
+    fmt.Println("dt: ", time.Since(start))
+    // TODO: use Benchmark. Example in ./Oreilly/The_Go_Programming_Language_by_Alan_A_A_Donovan_and_Brian_W_Kernighan/11/4Benchmark
 }
 
 func incrementUntilTarget() {
