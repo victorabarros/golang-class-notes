@@ -48,7 +48,7 @@ func buildRandomPalindrome(length int) string {
 	rng := rand.New(rand.NewSource(seed))
 	runes := make([]rune, length)
 
-    for i := 0; i < (length+1)/2; i++ {
+	for i := 0; i < (length+1)/2; i++ {
 		r := rune(rng.Intn(0x1000))
 		runes[i] = r
 		runes[length-1-i] = r

@@ -3,6 +3,7 @@
 This repository is my class notes from every video, article, course, etc...
 Here is my back up from all my knowledge of go language.
 
+## TODO
 
-## TODO:
- - Refact nsq_consumer
+- Refact nsq_consumer
+- Add Makefile (based on hotel-worker)
