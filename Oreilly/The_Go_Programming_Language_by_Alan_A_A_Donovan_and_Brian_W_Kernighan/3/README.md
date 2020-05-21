@@ -11,3 +11,47 @@ https://learning.oreilly.com/library/view/the-go-programming/9780134190570/ebook
 > The behavior of `/` depends on whether its operands are integers,so 5.0/4.0 is 1.25, but 5/4 is 1 because integer division truncates the result toward zero.
 
 ## 3.2 Floating-Point Numbers
+
+## 3.3 Complex Numbers
+
+## 3.4 Booleans
+
+## 3.5 String
+
+## 3.6 Constants
+
+### 3.6.1 The Constant Generator `iota`
+
+> A const declaration may use the _constant generator_ **iota**, which is used to create a sequence of related values without spelling out each one explicitly.
+> An example from the time package, which defines named constants of type Weekday.
+> Types of this kind are often called **enumerations** or **enums**.
+
+```go
+type weekday int
+
+const (
+    sunday    weekday = iota // 0
+    monday                   // 1
+    tuesday                  // 2
+    wednesday                // 3
+    thursday                 // 4
+    friday                   // 5
+    saturday                 // 6
+)
+```
+
+Or more complex expressions:
+
+```go
+type enu int
+
+const (
+    en1  enu = 1 << iota // 1
+    en2                  // 2
+    en4                  // 4
+    en8                  // 8
+    en16                 // 16
+)
+```
+
+> The `iota` mechanism has its limits. It’s not possible to generate the more familiar powers of 1000 (KB, MB, and so on) because there is no exponentiation operator.
