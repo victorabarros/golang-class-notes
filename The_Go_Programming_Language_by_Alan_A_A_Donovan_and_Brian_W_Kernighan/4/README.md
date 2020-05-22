@@ -46,3 +46,56 @@ func reverse(s []int) {
     s = []int(nil) // len(s) == 0, s == nil
     s = []int{}    // len(s) == 0, s != nil
 ```
+
+## 4.3 Maps
+
+> In Go, a map is a referenceto a hash table.
+
+A map element is not a variable, and we cannot take its address:
+> One reason that we can’t take the address of a map element is that growing a map might cause rehashing of existing elements into new storage locations,thus potentially invalidating the address.
+
+```go
+    _ = &ages["bob"] // compile error: cannot take address of map element
+
+```
+
+> This is a common pattern:
+
+```go
+import "sort"
+
+func main() {
+    ages := map[string]int{
+        "charlie": 34,
+        "alice":   31,
+    }
+
+    var names [len(ages)]string
+    for name := range ages { // maps are unordereds. Every iteration will be in random order.
+        names = append(names, name)
+    }
+
+    sort.Strings(names)
+    for _, name := range names {
+        fmt.Printf("%s\t%d\n", name, ages[name])
+    }
+}
+```
+
+```go
+func equal(x, y map[string]int) bool {
+    if len(x) != len(y) {
+        return false
+    }
+
+    for k, xv := range x {
+        if yv, ok := y[k]; !ok || yv != xv { // elegant
+            return false
+        }
+    }
+    return true
+}
+```
+
+## 4.4 Struct
+
