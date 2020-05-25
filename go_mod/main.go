@@ -12,7 +12,7 @@ const (
 func main() {
     logrus.Info("Starting script ~logging with logrus pkg")
 	for j := 0; j < 256; j++ {
-		fmt.Printf(printColor, j, "Hello! ")
+		fmt.Printf(printColor, j, "victorbarros1130! ")
 	}
-    logrus.Info("\nFinishing")
+    logrus.Info("Finishing")
 }
