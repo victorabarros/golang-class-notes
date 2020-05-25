@@ -19,7 +19,7 @@ func xpto() (a int, err error) {
 }
 ```
 
-## 5.4.2 End of File EOF
+### 5.4.2 End of File EOF
 
 ```go
     in := bufio.NewReader(os.Stdin)
@@ -32,5 +32,20 @@ func xpto() (a int, err error) {
             return fmt.Errorf("read failed: %v", err)
         }
         // ...use r...
+    }
+```
+
+## 5.9 Panic
+
+> A panicis often the best thing to do when some “impossible” situationhappens.
+
+```go
+    switch s := suit(drawCard()); s {
+        case "Spades":   // ...
+        case "Hearts":   // ...
+        case "Diamonds": // ...
+        case "Clubs":    // ...
+        default:
+            panic(fmt.Sprintf("invalid suit %q", s)) // Joker?
     }
 ```
