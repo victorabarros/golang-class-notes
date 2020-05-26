@@ -95,3 +95,14 @@ func Lookup(key string) string {
     fmt.Println(distance(p, q))  // "5"
     fmt.Printf("%T\n", distance) // "func(Point, Point) float64"
 ```
+
+## 6.5 Bit Vector Type
+
+> Bit vector is other alternative to "set" structure, besides map[T]bool.
+> But is much more complex.
+
+## 6.6 Encapsulation
+
+> When naming a getter method, we usually omit the Get prefix.
+> This preference for brevity extends to all methods, not just field accessors, and to other redundant prefixes as well, such as Fetch, Find, and Lookup
+
