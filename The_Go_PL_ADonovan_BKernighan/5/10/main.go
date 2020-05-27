@@ -14,7 +14,7 @@ func main() {
 }
 
 func letsPanic(ii int) {
-    fmt.Printf("letsPanic(%d)\n", ii+0/ii) // panics if ii == 0
+	fmt.Printf("letsPanic(%d)\n", ii+0/ii) // panics if ii == 0
 	defer fmt.Printf("defer %d\n", ii)
 
 	letsPanic(ii - 1)

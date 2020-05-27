@@ -1,8 +1,8 @@
 package main
 
 import (
+	"fmt"
 	"github.com/sirupsen/logrus"
-    "fmt"
 )
 
 const (
@@ -10,9 +10,9 @@ const (
 )
 
 func main() {
-    logrus.Info("Starting script ~logging with logrus pkg")
+	logrus.Info("Starting script ~logging with logrus pkg")
 	for j := 0; j < 256; j++ {
 		fmt.Printf(printColor, j, "victorbarros1130! ")
 	}
-    logrus.Info("Finishing")
+	logrus.Info("Finishing")
 }
