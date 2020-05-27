@@ -1,13 +1,13 @@
 # GOPHERCON BRASIL 2019
+
 ## Otimização e Performance em Go: fomos longe demais?
 
 https://www.infoq.com/br/presentations/otimizacao-performance-em-go/
 
-
- - Measure twice, cut once.
- - Premature optimization is the root of all evil - Donald Knuth
-![](./rootOfAllEvil.jpg)
- - Latency at a human scale: [Font]( https://www.prowesscorp.com/computer-latency-at-a-human-scale/)
+- Measure twice, cut once.
+- Premature optimization is the root of all evil - Donald Knuth
+![image](./rootOfAllEvil.jpg)
+- Latency at a human scale: [Font]( https://www.prowesscorp.com/computer-latency-at-a-human-scale/)
 
 |System Event|Actual Latency|Scaled Latency|
 |------|---|----|------|
@@ -23,13 +23,15 @@ https://www.infoq.com/br/presentations/otimizacao-performance-em-go/
 |Rotational disk I/O|1–10 ms|1–9 months|
 |Internet call: San Francisco to New York City|65 ms[3]|5 years|
 |Internet call: San Francisco to Hong Kong|141 ms[3]|11 years|
- - Livro para performance em Go de dgryski: [go-perfbook](https://github.com/dgryski/go-perfbook)
- - Ferramentas para medição:
-    - Pprof: lib nativade go blog.golang.org/profiling-go-programs
-    - Flame graphs (Incluso no pprof)
-    - Benchmark(igual teste unitário)
-    - benchcmp
-    - benchstat
 
- - Referências:
-    - youtube: tracing Rhys Hiltner gophercon 2017
+- **Livro para performance em Go de dgryski**: [go-perfbook](https://github.com/dgryski/go-perfbook)
+
+- **Ferramentas para medição**:
+  - Pprof: lib nativade go blog.golang.org/profiling-go-programs
+  - Flame graphs (Incluso no pprof)
+  - Benchmark(igual teste unitário)
+  - benchcmp
+  - benchstat
+
+- **Referências**:
+  - youtube: tracing Rhys Hiltner gophercon 2017
