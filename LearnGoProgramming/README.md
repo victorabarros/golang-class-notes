@@ -33,6 +33,7 @@ Remember: **Readability equals maintainability**
 
 ## Configure VS Code
 
+> Thank so much. It's changing my coding life.
 https://youtu.be/NphW8lvJ_fg?list=WL
 
 ## Slice Header
