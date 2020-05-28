@@ -9,40 +9,22 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-const (
-	logLevel   = "INFO"
-	dbUser     = "dbUser"
-	dbPassword = "dbPassword"
-	dbHost     = "dbHost"
-	dbName     = "dbName"
-)
-
-var (
-	dsn = fmt.Sprintf("%s:%s@tcp(%s)/%s",
-		dbUser,
-		dbPassword,
-		dbHost,
-		dbName)
-)
-
 func main() {
+	cfg := buildcfg()
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	otaDB, err := newDatabase(ctx, "mysql", dsn)
+	otaDB, err := newDatabase(ctx, "mysql", cfg.dsn)
 	if err != nil {
 		logrus.WithError(err).Fatal("Error in load database instance.")
 	}
 	defer otaDB.Connection.Close()
 
-	table := "table"
-	query := "SELECT DISTINCT id FROM %s WHERE id IN (%s);"
-
 	for _, t := range []string{
-		fmt.Sprintf("%s.%s", dbName, table),
-		table,
+		fmt.Sprintf("%s.%s", cfg.dbName, cfg.table),
+		cfg.table,
 	} {
-		query := fmt.Sprintf(query, t, "id")
+		query := fmt.Sprintf(cfg.query, t, cfg.id)
 		fmt.Println(otaDB.selectHotelIDs(query))
 	}
 }
@@ -58,7 +40,7 @@ func newDatabase(ctx context.Context, driver string, dsn string) (*database, err
 		return nil, err
 	}
 
-	return &database{Connection: conn, Name: dbName}, nil
+	return &database{Connection: conn, Name: ""}, nil
 }
 
 func (db *database) selectHotelIDs(query string) ([]int, error) {
