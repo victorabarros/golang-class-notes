@@ -281,4 +281,5 @@ package*.json
 .banking_integration/secrets.py
 hurb/*
 c.out
-/sqlx/query/config
+*secret*
+.idea/

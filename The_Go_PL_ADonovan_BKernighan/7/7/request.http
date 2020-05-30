@@ -1,0 +1,4 @@
+GET http://localhost:8001/list
+GET http://localhost:8001/price?item=shoes
+GET http://localhost:8001/price?item=hat
+GET http://localhost:8001/random

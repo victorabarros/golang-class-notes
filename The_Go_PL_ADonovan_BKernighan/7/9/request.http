@@ -1,0 +1,2 @@
+GET http://localhost:8091/
+GET http://localhost:8091/plot3D?expr=pow(2,sin(y))*pow(2,sin(x))/12
