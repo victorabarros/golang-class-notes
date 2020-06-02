@@ -120,3 +120,35 @@ func formatOneValue(x interface{}) string {
     }
     // ...all other types...}
 ```
+
+## 7.13 Type Switches
+
+> an interface’s methods express the similarities ofthe concrete types that satisfy the interface but hide therepresentation details and intrinsic operations of those concretetypes.
+
+example at ./13/main.go
+
+```go
+func wichType(x interface{}){
+    switch x.(type) {
+    case nil:
+        fmt.Println(x, "is type nil")
+    case int, uint
+        fmt.Println(x, "is type int, uin")
+    case bool:
+        fmt.Println(x, "is type bool")
+    case string:
+        fmt.Println(x, "is type string")
+    default:
+        fmt.Println(x, "is any type")
+    }
+}
+```
+
+## 7.14 Example: Token-Based XML Decoding
+
+## 7.15 A Few Words of Advice
+
+The most importanty advice about interfaces:
+> Interfaces are only needed when there are two or more concrete typesthat must be dealt with in a uniform way.
+> We make an exception to this rule when an interface is satisfied by a single concrete type but that type cannot live in the samepackage as the interface because of its dependencies.
+> In that case, an interface is a good way to decouple two packages.
