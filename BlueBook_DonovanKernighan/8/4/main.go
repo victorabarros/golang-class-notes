@@ -43,11 +43,10 @@ func pipelines42() {
 
 	// Counter
 	go func() {
-		for x := 0; x < 10; x++ {
+		for x := 0; ; x++ {
 			naturals <- x
 			time.Sleep(500 * time.Millisecond)
 		}
-		close(naturals)
 	}()
 
 	// Squarer
@@ -60,6 +59,7 @@ func pipelines42() {
 
 	// Printer (in main goroutine)
 	for {
-		fmt.Println(<-squares)
+		fmt.Print("waiting: \t")
+		fmt.Print(<-squares, "\n")
 	}
 }

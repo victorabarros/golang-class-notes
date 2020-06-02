@@ -7,3 +7,5 @@
 ## 8.2 Example: Concurrent Clock Server
 
 ## 8.4 Channels
+
+### 8.4.3 Unidirectional Channel Types
