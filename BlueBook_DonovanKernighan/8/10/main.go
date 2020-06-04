@@ -30,7 +30,6 @@ func main() {
 type client chan<- string // Clients inbox msg
 
 var (
-	clients  = make(map[client]bool) // Current set of connected clients
 	entering = make(chan client)
 	leaving  = make(chan client)
 	messages = make(chan string)
@@ -38,6 +37,14 @@ var (
 
 // The broadcaster thread manages the clients and messages traffic
 func broadcaster() {
+	clients := make(map[client]bool) // Current set of connected clients
+
+	sendMsg := func(msg string) {
+		for cli := range clients {
+			cli <- msg
+		}
+	}
+
 	// good illustration of how *select* works
 	for {
 		select {
@@ -52,13 +59,6 @@ func broadcaster() {
 			delete(clients, cli)
 			close(cli)
 		}
-	}
-
-}
-
-func sendMsg(msg string) {
-	for cli := range clients {
-		cli <- msg
 	}
 }
 

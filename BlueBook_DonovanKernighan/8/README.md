@@ -154,3 +154,7 @@ TODO: Run a server that only sleep(2 seconds), try benchmark with the executeChu
 ## 8.10 Example: Chat Server
 
 > Chat broadcast system.
+
+## Final considerations
+
+> It's a chapter that deserves a revisit later. Select, capacity, etc.. Are powerfulls and not trivials tools.
