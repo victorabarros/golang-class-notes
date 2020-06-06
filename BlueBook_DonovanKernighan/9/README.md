@@ -44,3 +44,14 @@ Each time a goroutine accesses the variables of the bank (just balance here), it
 IPC: The mutex guards the shared variables. By convention, the variables guarded by a mutex are declared immediately after the declaration of the mutex itself. If you deviate from this, be sure to document it.
 
 ## 9.3 Read/Write Mutexes: sync.RWMutex
+
+## 9.4 Memory Synchronization
+
+## 9.5 Lazy Initialization: sync.Once
+
+## 9.7 Example: Concurrent Non-Blocking Cache
+
+## 9.8 Goroutines and Threads
+
+### 9.8.3 GOMAXPROCS
+

@@ -5,6 +5,12 @@ import (
 	"time"
 )
 
+type age int
+
+func (a *age) inc() {
+	*a++
+}
+
 func worker(id int, jobs <-chan int, results chan<- int) {
 	for j := range jobs {
 		fmt.Println("worker", id, "started  job", j)
