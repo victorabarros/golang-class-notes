@@ -2,7 +2,7 @@
 
 > Here my notes, exercises and highlights of the Go Programming Language book - Donovan and Kernighan.
 
-## Doubts
+## TODO: Doubts
 
 - `goto` statement
 - `func init()` when it's trigged
