@@ -28,7 +28,7 @@ github.com/cncf/landscape
 Individual Libraries:
 
 - grpc/grpc-go
-- afex/hytrix-og Netflix's latency and fault tolerance
+- afex/hytrix-og Netflix's latency and fault tolerance (Circuit Breaker)
 - armon/go-metrics
 - spacemonkeygo/monkit process data collection, metrucs, monitorins, instrumentation and tracing
 - sirpsen/logrus
@@ -89,8 +89,8 @@ Messaging:
 
 - **Message Passing**       : tradicional 1 to 1
 - **WorkQueue**             : 1 to n sharing queue
-- **Remote Procedure Call** : 1 to n with n queues
-- **Publish/Subscribe**     : consumer and publihser communicate each other with tow queues
+- **Remote Procedure Call** : 1 to n with n queues, each all consumers reads all messages
+- **Publish/Subscribe**     : consumer and publihser communicate each other with two queues
 
 Payload formats:
 
@@ -101,3 +101,14 @@ Payload formats:
 ### Implement Sync RPC calls with Binary Protocols
 
 ### Using Circuit Breaker for Resilient Communication
+
+github.com/Netflix/Hystrix/wiki/How-it-Works
+
+### Message Queuing with RabbitMQ
+
+./Communication/RabbitMQ/
+
+### Pub/Sub with Kafka
+
+./Communication/Kafka/
+(Kafka hasn't a UI as others frameworks)
