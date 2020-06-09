@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  microservice:
+    build: .
+    image: gin-web:1.0.1
+    environment:
+    - PORT=8091
+    ports:
+    - "8091:8091"

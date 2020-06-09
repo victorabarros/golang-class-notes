@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  consul:
+    image: consul0.8.3
+    ports:
+        ...
+
+  gin-web-01:
+    image: gin...
+
+  gin-web-02:
+    image: gin...

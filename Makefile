@@ -7,7 +7,7 @@ PWD=$(shell pwd)
 
 debug:
 	@echo "\e[1m\033[32m\nDebug mode\e[0m"
-	@docker rm -f go_notes
+	# @docker rm -f go_notes
 	docker run -it -v ${PWD}:${APP_DIR} -w ${APP_DIR} \
 		-p 8091:8091 --name go_notes golang bash
 
