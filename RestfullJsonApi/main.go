@@ -36,6 +36,7 @@ func main() {
 	router.HandleFunc("/", homeLink)
 	router.HandleFunc("/event", createEvent)
 	router.HandleFunc("/events/{id}", getOneEvent)
+	fmt.Println("Starting")
 	log.Fatal(http.ListenAndServe(":8091", router))
 }
 
