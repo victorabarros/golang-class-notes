@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/victorabarros/home/victor/Documents/repository/Learning/golang/go_in_3_hours/third_packages/language/mapper/mapper.go"
+	"github.com/victorabarros/golang-class-notes/go_in_3_hours/third_packages/language/mapper"
 )
 
 func main() {
