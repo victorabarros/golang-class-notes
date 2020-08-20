@@ -8,6 +8,7 @@ import (
 	"time"
 )
 
+// Storage docstring
 type Storage struct {
 	sync.RWMutex
 	HashMap map[string]string
@@ -36,6 +37,8 @@ func main() {
 	memProfile, _ := os.Create("./report/memprofile")
 
 	pprof.StartCPUProfile(cpuProfile)
+	defer pprof.StopCPUProfile()
+	defer pprof.WriteHeapProfile(memProfile)
 
 	fmt.Println("Started")
 
@@ -50,9 +53,6 @@ func main() {
 	<-c1
 	<-c2
 	<-c3
-
-	pprof.StopCPUProfile()
-	pprof.WriteHeapProfile(memProfile)
 
 	fmt.Println("Finished!!!")
 }
