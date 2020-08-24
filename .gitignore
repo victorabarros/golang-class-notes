@@ -283,3 +283,5 @@ hurb/*
 c.out
 *secret*
 .idea/
+*vendor/
+.vscode/

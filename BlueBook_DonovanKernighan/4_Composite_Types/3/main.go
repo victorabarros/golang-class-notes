@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	seen := make(map[string]bool) // a set of strings
+	seen := make(map[string]bool) // a set of strings // a kind of cache
 
 	input := bufio.NewScanner(os.Stdin)
 	for input.Scan() {
