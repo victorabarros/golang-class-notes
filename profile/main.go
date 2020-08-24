@@ -53,6 +53,7 @@ func main() {
 	<-c1
 	<-c2
 	<-c3
+	time.Sleep(10 * time.Second)
 
 	fmt.Println("Finished!!!")
 }
