@@ -3,6 +3,7 @@
 ## 8.1 Goroutines
 
 > The differencesbetween threads and goroutines are essentially quantitative, not qualitative.
+> Beatiful and simple example: `https://play.golang.org/p/J-lz7c0aDFW`
 
 ## 8.2 Example: Concurrent Clock Server
 

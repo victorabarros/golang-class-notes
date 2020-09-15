@@ -21,5 +21,7 @@ prof-mem:
 
 graph:
 	@echo "make graph"
-	@apt update
-	@apt install -y graphviz
+	@apt update && apt install -y graphviz
+
+ip-containers:
+	@docker ps -q | xargs docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'
