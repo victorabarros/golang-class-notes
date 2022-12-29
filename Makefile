@@ -9,10 +9,10 @@ clean-up:
 	@docker rm -f ${APP_NAME}
 
 debug:
-	@echo "\e[1m\033[32m\nDebug mode\e[0m"
+	@echo "Debug mode"
 	# @docker rm -f go_notes
 	docker run -it -v ${PWD}:${APP_DIR} -w ${APP_DIR} \
-		-p 8091:8091 --name ${APP_NAME} golang bash
+		-p 8091:8091 --rm --name ${APP_NAME} golang bash
 
 linter:
 	# https://github.com/golangci/golangci-lint
