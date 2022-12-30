@@ -14,9 +14,15 @@ cobra-cli init
 
 add `fmt.Println("Print: " + strings.Join(args, " "))` to command run
 
+## how to run
+
+macos: `env GOOS=darwin GOARCH=amd64 go build`
+
 ## install cli
 
-go install
+`go install`
+<!-- > Note: make sure that `$GOPATH/bin` is on your `$PATH` environment variable, because is where it will be installed. -->
+<!-- `export PATH=$GOPATH/bin:$PATH` -->
 
 ## usage
 
