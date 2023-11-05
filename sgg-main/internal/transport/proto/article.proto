@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+option go_package = "internal/transport/pb";
+
+message Article {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string expiration_date = 4;
+  repeated Image images = 5;
+}
+
+message Image {
+  string path = 1;
+}
+
+// request message to create a new article
+message CreateArticleRequest {
+  string title = 1;
+  string description = 2;
+  string expiration_date = 3;
+  repeated Image images = 4;
+}
+
+// request message to get a list of articles
+message ListArticlesRequest {
+  string with_images = 1;
+}
+
+// request message to attach an image to
+// an existing article
+message AttachImageRequest {
+  string article_id = 1;
+  string path = 2;
+}
+
+message ArticlesResponse {
+  repeated Article articles = 1;
+}
+
+// articles service definition.
+service Articles {
+  rpc Create (CreateArticleRequest) returns (Article) {}
+  rpc List (ListArticlesRequest) returns (ArticlesResponse) {}
+  rpc AttachImage (AttachImageRequest) returns (Article) {}
+}

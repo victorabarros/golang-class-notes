@@ -1,0 +1,162 @@
+run:
+  skip-dirs:
+    - pkg/tests
+    - internal/tests
+    - vendor$
+    - third_party$
+  skip-dirs-use-default: false
+  tests: false
+  timeout: 5m
+linters:
+  enable:
+    - bodyclose
+    - deadcode
+    - decorder
+    - depguard
+    - dogsled
+    - errcheck
+    - exhaustive
+    - exportloopref
+    - forcetypeassert
+    #- gochecknoinits
+    - goconst
+    - gocritic
+    - gocyclo
+    - gofmt
+    - goimports
+    - gomoddirectives
+    - goprintffuncname
+    - gosec
+    - gosimple
+    - govet
+    - ifshort
+    - importas
+    - ineffassign
+    - misspell
+    - nakedret
+    - nilerr
+    - noctx
+    - nolintlint
+    - revive
+    - rowserrcheck
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - tagliatelle
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - varcheck
+    - wastedassign
+    - whitespace
+  enable-all: false
+  disable-all: false
+output:
+  format: colored-line-number
+  print-issued-lines: true
+  print-linter-name: true
+linters-settings:
+  errcheck:
+    check-type-assertions: false
+    check-blank: false
+    ignore: fmt:.*
+  govet:
+    check-shadowing: true
+  golint:
+    min-confidence: 0.8
+  gofmt:
+    simplify: true
+  funlen:
+    lines: 100
+    statements: 50
+  goconst:
+    min-len: 2
+    min-occurrences: 3
+  gocyclo:
+    min-complexity: 16
+  maligned:
+    suggest-new: true
+  misspell:
+    locale: US
+  lll:
+    tab-width: 1
+    line-length: 130
+  unused:
+    check-exported: false
+  unparam:
+    check-exported: false
+  nakedret:
+    max-func-lines: 30
+  nolintlint:
+    require-explanation: true
+    require-specific: true
+  ifshort:
+    max-decl-lines: 1
+    max-decl-chars: 30
+  whitespace:
+    multi-if: false
+    multi-func: true
+  decorder:
+    dec-order:
+      - type
+      - const
+      - var
+      - func
+    disable-dec-order-check: false
+    disable-init-func-first-check: false
+    disable-dec-num-check: true
+    ifshort:
+    max-decl-lines: 1
+    max-decl-chars: 30
+  revive:
+    ignore-generated-header: true
+    severity: error
+    rules:
+      - name: context-as-argument
+      - name: context-keys-type
+      - name: dot-imports
+      - name: error-return
+      - name: error-strings
+      - name: error-naming
+      - name: if-return
+      - name: var-naming
+      - name: var-declaration
+      - name: range
+      - name: receiver-naming
+      - name: time-naming
+      - name: unexported-return
+      - name: errorf
+      - name: unused-parameter
+      - name: unreachable-code
+      - name: redefines-builtin-id
+      - name: superfluous-else
+      - name: indent-error-flow
+      - name: atomic
+      - name: bare-return
+      - name: bool-literal-in-expr
+      - name: call-to-gc
+      - name: duplicated-imports
+      - name: function-result-limit
+        arguments: [3]
+      - name: identical-branches
+      - name: modifies-value-receiver
+      - name: range-val-in-closure
+      - name: range-val-address
+      - name: string-of-int
+      - name: struct-tag
+      - name: unconditional-recursion
+      - name: unexported-naming
+      - name: waitgroup-by-value
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - gocyclo
+        - dupl
+        - gosec
+  exclude-use-default: true
+  exclude-case-sensitive: false
+  max-issues-per-linter: 50
+  max-same-issues: 3
+  new: false
