@@ -10,7 +10,7 @@
 
 ```go
     q := [...]int{1, 2, 3}
-    fmt.Printf("%T\n", q) // "[3]int"
+    fmt.Printf("%T\n", q)  // "[3]int"
     q = [4]int{1, 2, 3, 4} // compile error: cannot assign [4]int to [3]int
 ```
 

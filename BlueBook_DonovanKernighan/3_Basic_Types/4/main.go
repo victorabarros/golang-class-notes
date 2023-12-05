@@ -3,9 +3,40 @@ package main
 import "fmt"
 
 func main() {
-	// simpleLoop()
+	simpleLoop()
 	loopInDetails()
 	loopInDetailsV2()
+
+	simpleIf()
+	ifDetailed()
+}
+
+func simpleIf() {
+	err := fmt.Errorf("new error")
+
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+
+func ifDetailed() {
+	var err error = nil
+
+	preStatement := func() {
+		err = fmt.Errorf("new error")
+	}
+
+	conditional := func() bool {
+		return err != nil
+	}
+
+	action := func() {
+		fmt.Println(err)
+	}
+
+	if preStatement(); conditional() {
+		action()
+	}
 }
 
 func simpleLoop() {

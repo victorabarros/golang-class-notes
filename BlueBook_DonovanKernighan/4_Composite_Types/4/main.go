@@ -1,12 +1,50 @@
 package main
 
+import "fmt"
+
 type tree struct {
 	value       int
 	left, right *tree
 }
 
-func main() {
+func New(value int) tree {
+	return tree{
+		value: value,
+		left:  nil,
+		right: nil,
+	}
+}
 
+func (t *tree) Add(newTree tree) {
+	fmt.Println(1, t)
+	if t == nil {
+		t = &newTree
+		fmt.Println(7, t)
+		return
+	}
+	fmt.Println(2, t)
+
+	if newTree.value < t.value {
+		fmt.Println(3, t)
+		t.left.Add(newTree)
+	} else if newTree.value == t.value {
+		fmt.Println(4, t)
+		// do nothing
+	} else {
+		fmt.Println(5, t)
+		t.right.Add(newTree)
+	}
+	fmt.Println(6, t)
+}
+
+func main() {
+	newTree := New(5)
+	// for i := 0; i < 10; i++ {
+	// 	newTree.Add(New(i))
+	// }
+	newTree.Add(New(4))
+
+	fmt.Printf("%+2v\n", newTree)
 }
 
 // Sort sorts values in place.
@@ -15,16 +53,16 @@ func Sort(values []int) {
 	for _, v := range values {
 		root = add(root, v)
 	}
-	appendValues(values[:0], root)
+	AppendValues(values[:0], root)
 }
 
-// appendValues appends the elements of t to values in order
+// AppendValues appends the elements of t to values in order
 // and returns the resulting slice.
-func appendValues(values []int, t *tree) []int {
+func AppendValues(values []int, t *tree) []int {
 	if t != nil {
-		values = appendValues(values, t.left)
+		values = AppendValues(values, t.left)
 		values = append(values, t.value)
-		values = appendValues(values, t.right)
+		values = AppendValues(values, t.right)
 	}
 	return values
 }
