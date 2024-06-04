@@ -3,35 +3,48 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"sync"
+)
+
+var (
+	// wg sync.WaitGroup
+	court  = make(chan int)
+	finish = make(chan int)
 )
 
 func main() {
 	listing_6_20()
 }
 
-var (
-	wg sync.WaitGroup
-)
-
 func listing_6_20() {
-	court := make(chan int)
 
-	wg.Add(2)
+	// wg.Add(2)
 	go player("Nadal", court)
 	go player("Djokovic", court)
 
 	court <- 1
-	wg.Wait()
+	// wg.Wait()
 
+	// switch <-finish {
+	// case 1:
+	// 	fmt.Println("Game Over")
+	// default:
+	// 	fmt.Println("Game Over2")
+	// }
+	for {
+		<-finish
+		fmt.Println("Game Over3")
+		return
+	}
 }
 
 func player(name string, court chan int) {
-	defer wg.Done()
+	// defer wg.Done()
+
 	for {
 		ball, ok := <-court
 		if !ok {
 			fmt.Printf("Player %s\tWon\n", name)
+			finish <- 1
 			return
 		}
 
